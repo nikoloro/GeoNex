@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic metadata for proper rendering and SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Name</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main page wrapper -->
+    <div class="page-wrapper">
+        <!-- Top navigation bar -->
+        <header class="top-nav">
+            <!-- Company name placeholder (left side) -->
+            <div class="logo" data-i18n="companyName">
+                Company Name
+            </div>
+
+            <!-- Navigation links (center) -->
+            <nav class="nav-links">
+                <!-- Each link uses href to scroll to a section and data-i18n for language text -->
+                <a href="#about" data-i18n="navAbout">About Us</a>
+                <a href="#clients" data-i18n="navClients">Clients</a>
+                <a href="#contact" data-i18n="navContact">Contact</a>
+            </nav>
+
+            <!-- Language toggle button (right side) -->
+            <button id="lang-toggle" class="lang-toggle">
+                <!-- Static label, JS will track current language -->
+                EN/ES
+            </button>
+        </header>
+
+        <!-- Hero section with main headline and tagline -->
+        <section class="hero">
+            <!-- Main company title (also uses i18n so it can change if you want later) -->
+            <h1 data-i18n="heroTitle">Company Name</h1>
+
+            <!-- Tagline: example 2 you chose -->
+            <p class="tagline" data-i18n="heroTagline">
+                Precision Scanning for Rare Earth &amp; Geological Voids
+            </p>
+        </section>
+
+        <!-- About Us section -->
+        <section id="about" class="section about-section">
+            <!-- Section title -->
+            <h2 data-i18n="aboutTitle">About Us</h2>
+
+            <!-- Section content: friendly, professional, slightly marketing-focused -->
+            <p data-i18n="aboutText">
+                We specialize in advanced detection of rare minerals such as gold, emerald, copper, and silver,
+                as well as identifying underground voids and cavities. Using cutting-edge technology and
+                data-driven analysis, we provide clear, reliable insights that help our clients make confident
+                decisions in exploration, construction, and risk assessment.
+            </p>
+        </section>
+
+        <!-- Clients / Testimonials section -->
+        <section id="clients" class="section clients-section">
+            <!-- Section title -->
+            <h2 data-i18n="clientsTitle">Clients</h2>
+
+            <!-- Short intro text for the testimonials -->
+            <p class="section-intro" data-i18n="clientsIntro">
+                Here are a few examples of what our clients say about working with us.
+            </p>
+
+            <!-- Client 1 placeholder -->
+            <div class="client-card">
+                <!-- Circular placeholder for client image -->
+                <div class="client-photo">
+                    <!-- Empty on purpose; can be replaced with an <img> later -->
+                </div>
+
+                <!-- Client text container -->
+                <div class="client-info">
+                    <!-- Client name placeholder -->
+                    <h3 data-i18n="client1Name">Client Name 1</h3>
+                    <!-- Client comment placeholder -->
+                    <p data-i18n="client1Comment">
+                        “Professional, precise, and reliable. Their mineral detection reports helped us plan our
+                        operations with confidence.”
+                    </p>
+                </div>
+            </div>
+
+            <!-- Client 2 placeholder -->
+            <div class="client-card">
+                <div class="client-photo"></div>
+                <div class="client-info">
+                    <h3 data-i18n="client2Name">Client Name 2</h3>
+                    <p data-i18n="client2Comment">
+                        “Their underground void analysis was detailed and easy to understand. We highly recommend
+                        their services.”
+                    </p>
+                </div>
+            </div>
+
+            <!-- Client 3 placeholder -->
+            <div class="client-card">
+                <div class="client-photo"></div>
+                <div class="client-info">
+                    <h3 data-i18n="client3Name">Client Name 3</h3>
+                    <p data-i18n="client3Comment">
+                        “Fast communication, clear results, and a very professional team. We will definitely work
+                        with them again.”
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact" class="section contact-section">
+            <!-- Section title -->
+            <h2 data-i18n="contactTitle">Contact</h2>
+
+            <!-- Short intro text -->
+            <p class="section-intro" data-i18n="contactIntro">
+                Get in touch to discuss your project, request a quote, or learn more about our services.
+            </p>
+
+            <!-- Contact details container -->
+            <div class="contact-details">
+                <!-- Owner name label + name -->
+                <div class="contact-item">
+                    <span class="contact-label" data-i18n="ownerNameLabel">Owner Name:</span>
+                    <span class="contact-value" data-i18n="ownerNameValue">Nicolas David Sanchez Motta</span>
+                </div>
+
+                <!-- Owner phone label + phone number -->
+                <div class="contact-item">
+                    <span class="contact-label" data-i18n="ownerPhoneLabel">Owner Phone:</span>
+                    <span class="contact-value" data-i18n="ownerPhoneValue">+1 (657) 354-9924</span>
+                </div>
+
+                <!-- Owner email label + email -->
+                <div class="contact-item">
+                    <span class="contact-label" data-i18n="ownerEmailLabel">Owner Email:</span>
+                    <span class="contact-value" data-i18n="ownerEmailValue">nikolasmotta777@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- Small personal comment from me -->
+            <p class="owner-comment" data-i18n="ownerComment">
+                I’m committed to delivering accurate data so you can move forward with confidence.
+            </p>
+        </section>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
