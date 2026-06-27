@@ -1,0 +1,258 @@
+/* 
+   Global styles for the entire page.
+*/
+
+/* Reset some default browser styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base font, background, and text color */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #050509; /* Very dark background for futuristic feel */
+    color: #f5f5f5;            /* Light text for contrast */
+    line-height: 1.6;
+}
+
+/* Wrapper to limit content width and center it */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+}
+
+/* Top navigation bar styling */
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #222;
+    position: sticky;      /* Keeps nav at top when scrolling */
+    top: 0;
+    background: rgba(5, 5, 9, 0.95); /* Slight transparency for futuristic look */
+    backdrop-filter: blur(8px);      /* Glassy effect */
+    z-index: 1000;
+}
+
+/* Company logo / name styling */
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+/* Individual navigation links */
+.nav-links a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Underline hover effect for nav links */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff003c, #ff4b2b); /* Red gradient */
+    transition: width 0.25s ease-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Language toggle button styling */
+.lang-toggle {
+    border: 1px solid #ff003c;
+    background: transparent;
+    color: #ff003c;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.lang-toggle:hover {
+    background: #ff003c;
+    color: #050509;
+    transform: translateY(-1px);
+}
+
+/* Hero section styling */
+.hero {
+    padding: 60px 0 40px;
+    text-align: left;
+}
+
+/* Main hero title */
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+/* Tagline text */
+.tagline {
+    font-size: 1.1rem;
+    color: #cccccc;
+    max-width: 600px;
+}
+
+/* Generic section styling */
+.section {
+    padding: 40px 0;
+    border-top: 1px solid #151515;
+}
+
+/* Section titles */
+.section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+/* Intro text under section titles */
+.section-intro {
+    margin-bottom: 20px;
+    color: #d0d0d0;
+}
+
+/* About section specific styling */
+.about-section p {
+    max-width: 800px;
+    color: #dcdcdc;
+}
+
+/* Clients section layout */
+.clients-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual client card container */
+.client-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: #0b0b10;
+    border-radius: 10px;
+    border: 1px solid #1f1f2a;
+}
+
+/* Circular placeholder for client photo */
+.client-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #ff003c;
+    background: radial-gradient(circle at 30% 30%, #ff4b2b, #050509);
+    flex-shrink: 0;
+}
+
+/* Client info text container */
+.client-info h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+
+.client-info p {
+    font-size: 0.95rem;
+    color: #d0d0d0;
+}
+
+/* Contact section styling */
+.contact-details {
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+/* Individual contact item row */
+.contact-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+/* Label for contact fields */
+.contact-label {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Value for contact fields */
+.contact-value {
+    color: #d0d0d0;
+}
+
+/* Owner comment styling */
+.owner-comment {
+    margin-top: 10px;
+    color: #dcdcdc;
+    max-width: 700px;
+}
+
+/* Make layout responsive on smaller screens */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        order: 3;
+        margin-top: 4px;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .lang-toggle {
+        order: 2;
+    }
+
+    .client-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+}
