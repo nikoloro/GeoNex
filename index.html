@@ -1,157 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic metadata for proper rendering and SEO -->
+    <!-- Basic metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GEONEX EXPLORING ENTERPRICE</title>
+    <title>GeoNex – Advanced Geological Intelligence</title>
 
-    <!-- Link to external CSS file -->
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Main page wrapper -->
-    <div class="page-wrapper">
-        <!-- Top navigation bar -->
-        <header class="top-nav">
-            <!-- Company name placeholder (left side) -->
-            <div class="logo" data-i18n="GEONEX EXPLORING ENTERPRICE">
-                GEONEX EXPLORING ENTERPRICE
+
+    <!-- ============================
+         TOP NAVIGATION BAR
+    ============================= -->
+    <header class="top-nav">
+        <div class="logo">GeoNex</div>
+
+        <nav class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#map">Map</a>
+            <a href="#process">Process</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Language toggle -->
+        <button id="lang-toggle" class="lang-toggle">EN/ES</button>
+    </header>
+
+    <!-- ============================
+         FULL-SCREEN HERO SECTION
+    ============================= -->
+    <section class="hero">
+        <!-- Background satellite image is handled in CSS -->
+        
+        <!-- Logo fade-in -->
+        <img src="images/geonex-logo.png" alt="GeoNex Logo" class="hero-logo">
+
+        <!-- Main hero text -->
+        <h1 class="hero-title">Advanced Geological Intelligence</h1>
+        <p class="hero-subtitle">Discover. Analyze. Explore.</p>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="cta-button">Request an Analysis</a>
+    </section>
+
+    <!-- ============================
+         SERVICES SECTION
+    ============================= -->
+    <section id="services" class="section services-section">
+        <h2>Our Services</h2>
+
+        <div class="services-grid">
+
+            <!-- Card 1 -->
+            <div class="service-card">
+                <div class="icon yellow">🟡</div>
+                <h3>Mineral Exploration</h3>
+                <p>High‑precision detection of gold, copper, emeralds, and rare earth minerals.</p>
             </div>
 
-            <!-- Navigation links (center) -->
-            <nav class="nav-links">
-                <!-- Each link uses href to scroll to a section and data-i18n for language text -->
-                <a href="#about" data-i18n="navAbout">About Us</a>
-                <a href="#clients" data-i18n="navClients">Clients</a>
-                <a href="#contact" data-i18n="navContact">Contact</a>
-            </nav>
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div class="icon green">🟢</div>
+                <h3>Underground Void Detection</h3>
+                <p>Identify cavities, tunnels, and structural anomalies with advanced scanning.</p>
+            </div>
 
-            <!-- Language toggle button (right side) -->
-            <button id="lang-toggle" class="lang-toggle">
-                <!-- Static label, JS will track current language -->
-                EN/ES
-            </button>
-        </header>
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div class="icon blue">🔵</div>
+                <h3>Geological Analysis</h3>
+                <p>Professional geological interpretation, mapping, and risk assessment.</p>
+            </div>
 
-        <!-- Hero section with main headline and tagline -->
-        <section class="hero">
-            <!-- Main company title (also uses i18n so it can change if you want later) -->
-            <h1 data-i18n="heroTitle">Company Name</h1>
+            <!-- Card 4 -->
+            <div class="service-card">
+                <div class="icon red">🔴</div>
+                <h3>Remote Sensing</h3>
+                <p>Satellite‑based terrain, mineral, and structural intelligence.</p>
+            </div>
 
-            <!-- Tagline: example 2 you chose -->
-            <p class="tagline" data-i18n="heroTagline">
-                Precision Scanning for Rare Earth &amp; Geological Voids
-            </p>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Us section -->
-        <section id="about" class="section about-section">
-            <!-- Section title -->
-            <h2 data-i18n="aboutTitle">About Us</h2>
+    <!-- ============================
+         INTERACTIVE MAP SECTION
+    ============================= -->
+    <section id="map" class="section map-section">
+        <h2>Interactive Exploration Map</h2>
+        <p>Click on a region to view exploration data.</p>
 
-            <!-- Section content: friendly, professional, slightly marketing-focused -->
-            <p data-i18n="aboutText">
-                We specialize in advanced detection of rare minerals such as gold, emerald, copper, and silver,
-                as well as identifying underground voids and cavities. Using cutting-edge technology and
-                data-driven analysis, we provide clear, reliable insights that help our clients make confident
-                decisions in exploration, construction, and risk assessment.
-            </p>
-        </section>
+        <!-- Placeholder iframe (you can replace with Mapbox, Google Maps API, etc.) -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26652.86506817841!2d-117.953669!3d33.836593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2b7e0f9c9a1f%3A0x8e2b0b0c0c0c0c0c!2sAnaheim%2C%20CA!5e0!3m2!1sen!2sus!4v1719444444444!5m2!1sen!2sus"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
 
-        <!-- Clients / Testimonials section -->
-        <section id="clients" class="section clients-section">
-            <!-- Section title -->
-            <h2 data-i18n="clientsTitle">Clients</h2>
+    <!-- ============================
+         PROCESS TIMELINE
+    ============================= -->
+    <section id="process" class="section process-section">
+        <h2>Our Process</h2>
 
-            <!-- Short intro text for the testimonials -->
-            <p class="section-intro" data-i18n="clientsIntro">
-                Here are a few examples of what our clients say about working with us.
-            </p>
+        <div class="timeline">
 
-            <!-- Client 1 placeholder -->
-            <div class="client-card">
-                <!-- Circular placeholder for client image -->
-                <div class="client-photo">
-                    <!-- Empty on purpose; can be replaced with an <img> later -->
-                </div>
+            <div class="timeline-step">
+                <span class="step-title">Client Request</span>
+                <div class="arrow">↓</div>
+            </div>
 
-                <!-- Client text container -->
-                <div class="client-info">
-                    <!-- Client name placeholder -->
-                    <h3 data-i18n="client1Name">Client Name 1</h3>
-                    <!-- Client comment placeholder -->
-                    <p data-i18n="client1Comment">
-                        “Professional, precise, and reliable. Their mineral detection reports helped us plan our
-                        operations with confidence.”
-                    </p>
+            <div class="timeline-step">
+                <span class="step-title">Satellite Data</span>
+                <div class="arrow">↓</div>
+            </div>
+
+            <div class="timeline-step">
+                <span class="step-title">Analysis</span>
+                <div class="arrow">↓</div>
+            </div>
+
+            <div class="timeline-step">
+                <span class="step-title">Report</span>
+                <div class="arrow">↓</div>
+            </div>
+
+            <div class="timeline-step">
+                <span class="step-title">Recommendations</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================
+         PROJECT GALLERY
+    ============================= -->
+    <section id="gallery" class="section gallery-section">
+        <h2>Project Gallery</h2>
+
+        <div class="gallery-grid">
+            <!-- Replace with your real images -->
+            <img src="images/field1.jpg" alt="Field Work">
+            <img src="images/equipment1.jpg" alt="Equipment">
+            <img src="images/map1.jpg" alt="Geological Map">
+            <img src="images/model1.jpg" alt="3D Model">
+        </div>
+    </section>
+
+    <!-- ============================
+         CONTACT SECTION
+    ============================= -->
+    <section id="contact" class="section contact-section">
+        <h2>Contact Us</h2>
+
+        <div class="contact-wrapper">
+
+            <!-- Contact Form -->
+            <form class="contact-form">
+                <label>Name</label>
+                <input type="text" placeholder="Your Name">
+
+                <label>Email</label>
+                <input type="email" placeholder="Your Email">
+
+                <label>Message</label>
+                <textarea placeholder="Tell us about your project..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>GeoNex Exploration</h3>
+
+                <p><strong>Email:</strong> nikolasmotta777@gmail.com</p>
+                <p><strong>Phone:</strong> +1 (657) 354‑9924</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/nicolas‑motta</p>
+
+                <!-- Google Maps Embed -->
+                <div class="map-small">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18..."
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
 
-            <!-- Client 2 placeholder -->
-            <div class="client-card">
-                <div class="client-photo"></div>
-                <div class="client-info">
-                    <h3 data-i18n="client2Name">Client Name 2</h3>
-                    <p data-i18n="client2Comment">
-                        “Their underground void analysis was detailed and easy to understand. We highly recommend
-                        their services.”
-                    </p>
-                </div>
-            </div>
+        </div>
+    </section>
 
-            <!-- Client 3 placeholder -->
-            <div class="client-card">
-                <div class="client-photo"></div>
-                <div class="client-info">
-                    <h3 data-i18n="client3Name">Client Name 3</h3>
-                    <p data-i18n="client3Comment">
-                        “Fast communication, clear results, and a very professional team. We will definitely work
-                        with them again.”
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact section -->
-        <section id="contact" class="section contact-section">
-            <!-- Section title -->
-            <h2 data-i18n="contactTitle">Contact</h2>
-
-            <!-- Short intro text -->
-            <p class="section-intro" data-i18n="contactIntro">
-                Get in touch to discuss your project, request a quote, or learn more about our services.
-            </p>
-
-            <!-- Contact details container -->
-            <div class="contact-details">
-                <!-- Owner name label + name -->
-                <div class="contact-item">
-                    <span class="contact-label" data-i18n="ownerNameLabel">Owner Name:</span>
-                    <span class="contact-value" data-i18n="ownerNameValue">Nicolas David Sanchez Motta</span>
-                </div>
-
-                <!-- Owner phone label + phone number -->
-                <div class="contact-item">
-                    <span class="contact-label" data-i18n="ownerPhoneLabel">Owner Phone:</span>
-                    <span class="contact-value" data-i18n="ownerPhoneValue">+1 (657) 354-9924</span>
-                </div>
-
-                <!-- Owner email label + email -->
-                <div class="contact-item">
-                    <span class="contact-label" data-i18n="ownerEmailLabel">Owner Email:</span>
-                    <span class="contact-value" data-i18n="ownerEmailValue">nikolasmotta777@gmail.com</span>
-                </div>
-            </div>
-
-            <!-- Small personal comment from me -->
-            <p class="owner-comment" data-i18n="ownerComment">
-                I’m committed to delivering accurate data so you can move forward with confidence.
-            </p>
-        </section>
-    </div>
-
-    <!-- Link to external JavaScript file -->
+    <!-- External JS -->
     <script src="script.js"></script>
+
 </body>
 </html>
