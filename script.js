@@ -12,11 +12,11 @@
 */
 const translations = {
     en: {
-        companyName: "GeoNex",
+        companyName: "GEONEX EXPLORING ENTERPRICE",
         navAbout: "About Us",
         navClients: "Clients",
         navContact: "Contact",
-        heroTitle: "Company Name",
+        heroTitle: "GEONEX EXPLORING ENTERPRICE",
         heroTagline: "Precision Scanning for Rare Earth & Geological Voids",
         aboutTitle: "About Us",
         aboutText:
@@ -49,11 +49,11 @@ const translations = {
             "I’m committed to delivering useful data so you can move forward with confidence."
     },
     es: {
-        companyName: "GeoNex",
+        companyName: "GEONEX EXPLORING ENTERPRICE",
         navAbout: "Sobre Nosotros",
         navClients: "Clientes",
         navContact: "Contacto",
-        heroTitle: "Nombre de la Empresa",
+        heroTitle: "GEONEX EXPLORING ENTERPRICE",
         heroTagline: "Escaneo de Precisión para Minerales Raros y Vacíos Geológicos",
         aboutTitle: "Sobre Nosotros",
         aboutText:
