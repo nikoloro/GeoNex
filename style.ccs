@@ -1,5 +1,6 @@
 /* 
    Global styles for the entire page.
+   We use a dark theme with black background and red/white accents.
 */
 
 /* Reset some default browser styles for consistency */
