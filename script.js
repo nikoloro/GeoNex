@@ -12,7 +12,7 @@
 */
 const translations = {
     en: {
-        companyName: "Company Name",
+        companyName: "GeoNex",
         navAbout: "About Us",
         navClients: "Clients",
         navContact: "Contact",
@@ -49,7 +49,7 @@ const translations = {
             "I’m committed to delivering useful data so you can move forward with confidence."
     },
     es: {
-        companyName: "Nombre de la Empresa",
+        companyName: "GeoNex",
         navAbout: "Sobre Nosotros",
         navClients: "Clientes",
         navContact: "Contacto",
