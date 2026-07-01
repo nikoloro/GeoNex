@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoNex – Advanced Geological Intelligence</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================
+         TOP NAVIGATION BAR
+    ============================= -->
+    <header class="top-nav">
+        <div class="logo">GeoNex</div>
+
+        <nav class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#map">Map</a>
+            <a href="#process">Process</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Language toggle -->
+        <button id="lang-toggle" class="lang-toggle">EN/ES</button>
+    </header>
+
+    <!-- ============================
+         FULL-SCREEN HERO SECTION
+    ============================= -->
+    <section class="hero">
+        <!-- Background satellite image is handled in CSS -->
+        
+        <!-- Logo fade-in -->
+        <img src="images/geonex-logo.png" alt="GeoNex Logo" class="hero-logo">
+
+        <!-- Main hero text -->
+        <h1 class="hero-title">Advanced Geological Intelligence</h1>
+        <p class="hero-subtitle">Discover. Analyze. Explore.</p>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="cta-button">Request an Analysis</a>
+    </section>
+
+    <!-- ============================
+         SERVICES SECTION
+    ============================= -->
+    <section id="services" class="section services-section">
+        <h2>Our Services</h2>
+
+        <div class="services-grid">
+
+            <!-- Card 1 -->
+            <div class="service-card">
+                <div class="icon yellow">🟡</div>
+                <h3>Mineral Exploration</h3>
+                <p>High‑precision detection of gold, copper, emeralds, and rare earth minerals.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div class="icon green">🟢</div>
+                <h3>Underground Void Detection</h3>
+                <p>Identify cavities, tunnels, and structural anomalies with advanced scanning.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div class="icon blue">🔵</div>
+                <h3>Geological Analysis</h3>
+                <p>Professional geological interpretation, mapping, and risk assessment.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-card">
+                <div class="icon red">🔴</div>
+                <h3>Remote Sensing</h3>
+                <p>Satellite‑based terrain, mineral, and structural intelligence.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================
+         INTERACTIVE MAP SECTION
+    ============================= -->
+    <section id="map" class="section map-section">
+        <h2>Interactive Exploration Map</h2>
+        <p>Click on a region to view exploration data.</p>
+
+        <!-- Placeholder iframe (you can replace with Mapbox, Google Maps API, etc.) -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26652.86506817841!2d-117.953669!3d33.836593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2b7e0f9c9a1f%3A0x8e2b0b0c0c0c0c0c!2sAnaheim%2C%20CA!5e0!3m2!1sen!2sus!4v1719444444444!5m2!1sen!2sus"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- ============================
+         PROCESS TIMELINE
+    ============================= -->
+    <section id="process" class="section process-section">
+        <h2>Our Process</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-step">
+                <span class="step-title">Client Request</span>
+                <div class="arrow">↓</div>
+            </div>
+
+            <div class="timeline-step">
+                <span class="step-title">Satellite Data</span>
+                <div class="arrow">↓</div>
+            </div>
+
+            <div class="timeline-step">
+                <span class="step-title">Analysis</span>
+                <div class="arrow">↓</div>
+            </div>
+
+            <div class="timeline-step">
+                <span class="step-title">Report</span>
+                <div class="arrow">↓</div>
+            </div>
+
+            <div class="timeline-step">
+                <span class="step-title">Recommendations</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================
+         PROJECT GALLERY
+    ============================= -->
+    <section id="gallery" class="section gallery-section">
+        <h2>Project Gallery</h2>
+
+        <div class="gallery-grid">
+            <!-- Replace with your real images -->
+            <img src="images/field1.jpg" alt="Field Work">
+            <img src="images/equipment1.jpg" alt="Equipment">
+            <img src="images/map1.jpg" alt="Geological Map">
+            <img src="images/model1.jpg" alt="3D Model">
+        </div>
+    </section>
+
+    <!-- ============================
+         CONTACT SECTION
+    ============================= -->
+    <section id="contact" class="section contact-section">
+        <h2>Contact Us</h2>
+
+        <div class="contact-wrapper">
+
+            <!-- Contact Form -->
+            <form class="contact-form">
+                <label>Name</label>
+                <input type="text" placeholder="Your Name">
+
+                <label>Email</label>
+                <input type="email" placeholder="Your Email">
+
+                <label>Message</label>
+                <textarea placeholder="Tell us about your project..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>GeoNex Exploration</h3>
+
+                <p><strong>Email:</strong> nikolasmotta777@gmail.com</p>
+                <p><strong>Phone:</strong> +1 (657) 354‑9924</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/nicolas‑motta</p>
+
+                <!-- Google Maps Embed -->
+                <div class="map-small">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18..."
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
