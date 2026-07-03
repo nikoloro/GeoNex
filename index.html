@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeoNex – Advanced Geological Intelligence</title>
 
-    <!-- External CSS -->
+    <title>GeoNex – Advanced Geological Intelligence</title>
+    <meta name="description" content="GeoNex provides advanced geological intelligence for mineral exploration, underground void detection, and remote sensing.">
+    <meta name="keywords" content="geology, mineral exploration, remote sensing, underground detection, geological analysis">
+    <meta name="author" content="GeoNex Exploration">
+
+    <meta property="og:title" content="GeoNex – Advanced Geological Intelligence">
+    <meta property="og:description" content="Discover, analyze, and explore with high-precision geological intelligence solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://geonex.example.com">
+    <meta property="og:image" content="images/geonex-hero.webp">
+
+<link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,90 +24,148 @@
          TOP NAVIGATION BAR
     ============================= -->
     <header class="top-nav">
-        <div class="logo">GeoNex</div>
+        <div class="logo" data-i18n="brandName">GeoNex</div>
 
         <nav class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#map">Map</a>
-            <a href="#process">Process</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
+            <a href="#about" data-i18n="navAbout">About</a>
+            <a href="#why" data-i18n="navWhy">Why Us</a>
+            <a href="#services" data-i18n="navServices">Services</a>
+            <a href="#industries" data-i18n="navIndustries">Industries</a>
+            <a href="#process" data-i18n="navProcess">Process</a>
+            <a href="#gallery" data-i18n="navGallery">Gallery</a>
+            <a href="#faq" data-i18n="navFaq">FAQ</a>
+            <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
 
-        <!-- Language toggle -->
-        <button id="lang-toggle" class="lang-toggle">EN/ES</button>
+        <button id="lang-toggle" class="lang-toggle" data-i18n="langToggle">EN / ES</button>
     </header>
 
     <!-- ============================
-         FULL-SCREEN HERO SECTION
+     HERO SECTION
     ============================= -->
     <section class="hero">
-        <!-- Background satellite image is handled in CSS -->
-        
-        <!-- Logo fade-in -->
-        <img src="images/geonex-logo.png" alt="GeoNex Logo" class="hero-logo">
+        <img src="assets/images/GeoNex-logo.png" alt="GeoNex Logo" class="hero-logo" style="
+            width:300px;
+            max-width:90%;
+            margin:0 auto;
+            display:block;
+        ">
 
-        <!-- Main hero text -->
-        <h1 class="hero-title">Advanced Geological Intelligence</h1>
-        <p class="hero-subtitle">Discover. Analyze. Explore.</p>
+        <h1 class="hero-title" data-i18n="heroTitle">Advanced Geological Intelligence</h1>
 
-        <!-- CTA Button -->
-        <a href="#contact" class="cta-button">Request an Analysis</a>
-    </section>
+        <p class="hero-rotate">
+            <span class="rotate-item">Mineral Exploration</span>
+            <span class="rotate-item">Groundwater Detection</span>
+            <span class="rotate-item">Geophysical Surveys</span>
+            <span class="rotate-item">Remote Sensing</span>
+        </p>
+
+    <a href="#contact" class="cta-button" data-i18n="heroCta">Request an Analysis</a>
+</section>
 
     <!-- ============================
-         SERVICES SECTION
+         ABOUT GEONEX
     ============================= -->
-    <section id="services" class="section services-section">
-        <h2>Our Services</h2>
+    <section id="about" class="section about-section">
+        <h2 data-i18n="aboutTitle">About GeoNex</h2>
 
-        <div class="services-grid">
+        <div class="about-wrapper">
+            <p data-i18n="aboutText">
+                GeoNex combines satellite analysis, geophysical methods, geological interpretation,
+                and modern exploration techniques to help clients identify mineral resources,
+                groundwater, underground cavities, and geological structures with precision.
+            </p>
 
-            <!-- Card 1 -->
-            <div class="service-card">
-                <div class="icon yellow">🟡</div>
-                <h3>Mineral Exploration</h3>
-                <p>High‑precision detection of gold, copper, emeralds, and rare earth minerals.</p>
+            <div class="about-images">
+                <img src="https://images.unsplash.com/photo-1708738793054-32b71e3fc822?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2F0ZWxpdGUlMjBhbmFseXNpc3xlbnwwfHwwfHx8MA%3D%3D" alt="Satellite analysis">
+                <img src="https://plus.unsplash.com/premium_photo-1675876617519-7ce9eae33dab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fERyb25lJTIwZ2VvbG9naWNhbCUyMGltYWdpbmd8ZW58MHx8MHx8fDA%3D" alt="Drone geological imaging">
             </div>
-
-            <!-- Card 2 -->
-            <div class="service-card">
-                <div class="icon green">🟢</div>
-                <h3>Underground Void Detection</h3>
-                <p>Identify cavities, tunnels, and structural anomalies with advanced scanning.</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="service-card">
-                <div class="icon blue">🔵</div>
-                <h3>Geological Analysis</h3>
-                <p>Professional geological interpretation, mapping, and risk assessment.</p>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="service-card">
-                <div class="icon red">🔴</div>
-                <h3>Remote Sensing</h3>
-                <p>Satellite‑based terrain, mineral, and structural intelligence.</p>
-            </div>
-
         </div>
     </section>
 
     <!-- ============================
-         INTERACTIVE MAP SECTION
+         WHY CHOOSE US
     ============================= -->
-    <section id="map" class="section map-section">
-        <h2>Interactive Exploration Map</h2>
-        <p>Click on a region to view exploration data.</p>
+    <section id="why" class="section why-section">
+        <h2 data-i18n="whyTitle">Why Choose GeoNex</h2>
 
-        <!-- Placeholder iframe (you can replace with Mapbox, Google Maps API, etc.) -->
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26652.86506817841!2d-117.953669!3d33.836593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2b7e0f9c9a1f%3A0x8e2b0b0c0c0c0c0c!2sAnaheim%2C%20CA!5e0!3m2!1sen!2sus!4v1719444444444!5m2!1sen!2sus"
-                loading="lazy"
-                allowfullscreen>
-            </iframe>
+        <div class="why-grid">
+            <div class="why-card">
+                <h3 data-i18n="why1Title">Satellite Analysis</h3>
+                <p data-i18n="why1Desc">High‑resolution remote sensing for mineral and structural detection.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-i18n="why2Title">Geological Interpretation</h3>
+                <p data-i18n="why2Desc">Professional subsurface mapping and structural modeling.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-i18n="why3Title">Precision Mapping</h3>
+                <p data-i18n="why3Desc">Accurate geological and geophysical mapping for decision‑making.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-i18n="why4Title">Fast Results</h3>
+                <p data-i18n="why4Desc">Efficient workflows delivering rapid geological insights.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-i18n="why5Title">International Projects</h3>
+                <p data-i18n="why5Desc">Experience across multiple countries and geological environments.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 data-i18n="why6Title">Professional Reports</h3>
+                <p data-i18n="why6Desc">Clear, actionable geological documentation for clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SERVICES
+    ============================= -->
+    <section id="services" class="section services-section">
+        <h2 data-i18n="servicesTitle">Our Services</h2>
+
+        <div class="services-grid">
+            <article class="service-card">
+                <h3 data-i18n="serviceMineralTitle">Mineral Exploration</h3>
+                <p data-i18n="serviceMineralDesc">High‑precision detection of gold, copper, emeralds, and rare earth minerals.</p>
+            </article>
+
+            <article class="service-card">
+                <h3 data-i18n="serviceVoidTitle">Underground Void Detection</h3>
+                <p data-i18n="serviceVoidDesc">Identify cavities, tunnels, and structural anomalies with advanced scanning.</p>
+            </article>
+
+            <article class="service-card">
+                <h3 data-i18n="serviceGeoTitle">Geological Analysis</h3>
+                <p data-i18n="serviceGeoDesc">Professional geological interpretation, mapping, and risk assessment.</p>
+            </article>
+
+            <article class="service-card">
+                <h3 data-i18n="serviceRemoteTitle">Remote Sensing</h3>
+                <p data-i18n="serviceRemoteDesc">Satellite‑based terrain, mineral, and structural intelligence.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- ============================
+         INDUSTRIES WE SERVE
+    ============================= -->
+    <section id="industries" class="section industries-section">
+        <h2 data-i18n="industriesTitle">Industries We Serve</h2>
+
+        <div class="industries-grid">
+            <div class="industry-card" data-i18n="industryMining">Mining</div>
+            <div class="industry-card" data-i18n="industryConstruction">Construction</div>
+            <div class="industry-card" data-i18n="industryAgriculture">Agriculture</div>
+            <div class="industry-card" data-i18n="industryWater">Water Wells</div>
+            <div class="industry-card" data-i18n="industryEngineering">Engineering</div>
+            <div class="industry-card" data-i18n="industryGovernment">Government</div>
+            <div class="industry-card" data-i18n="industryOilGas">Oil & Gas</div>
+            <div class="industry-card" data-i18n="industryUtilities">Utilities</div>
         </div>
     </section>
 
@@ -106,49 +173,79 @@
          PROCESS TIMELINE
     ============================= -->
     <section id="process" class="section process-section">
-        <h2>Our Process</h2>
+        <h2 data-i18n="processTitle">Our Process</h2>
 
         <div class="timeline">
+            <div class="timeline-step"><span data-i18n="processStepRequest">Consultation</span></div>
+            <div class="timeline-step"><span data-i18n="processStepSatellite">Data Collection</span></div>
+            <div class="timeline-step"><span data-i18n="processStepAnalysis">Geological Analysis</span></div>
+            <div class="timeline-step"><span data-i18n="processStepReport">Report</span></div>
+            <div class="timeline-step"><span data-i18n="processStepRecommendations">Recommendations</span></div>
+        </div>
+    </section>
 
-            <div class="timeline-step">
-                <span class="step-title">Client Request</span>
-                <div class="arrow">↓</div>
+   
+
+    <!-- ============================
+         GALLERY
+    ============================= -->
+    <section id="gallery" class="section gallery-section">
+        <h2 data-i18n="galleryTitle">Project Gallery</h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1647485938389-91df46750f1b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fEdvbGQlMjBtaW5lfGVufDB8fDB8fHww" alt="Gold exploration">
+                <div class="overlay" data-i18n="galleryGold">Gold Exploration</div>
             </div>
 
-            <div class="timeline-step">
-                <span class="step-title">Satellite Data</span>
-                <div class="arrow">↓</div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600363503477-a8d1d6d57dfc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2VvbG9naWNhbCUyMGVxdWlwbWVudHxlbnwwfHwwfHx8MA%3D%3D" alt="Geophysical equipment">
+                <div class="overlay" data-i18n="galleryGeoEquip">Geophysical Survey</div>
             </div>
 
-            <div class="timeline-step">
-                <span class="step-title">Analysis</span>
-                <div class="arrow">↓</div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1520299607509-dcd935f9a839?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Geological map">
+                <div class="overlay" data-i18n="galleryMap">Geological Mapping</div>
             </div>
 
-            <div class="timeline-step">
-                <span class="step-title">Report</span>
-                <div class="arrow">↓</div>
+            <div class="gallery-item">
+                <img src="https://media.istockphoto.com/id/878721166/photo/3d-render-of-geology-soil-slice-mountains-isolated-on-dark-background.jpg?s=1024x1024&w=is&k=20&c=viFU-_A5b3WX-ZVi5R4vPOOBvNR617betPDNj_UNZpk=" alt="3D model">
+                <div class="overlay" data-i18n="galleryModel">3D Geological Model</div>
             </div>
-
-            <div class="timeline-step">
-                <span class="step-title">Recommendations</span>
-            </div>
-
         </div>
     </section>
 
     <!-- ============================
-         PROJECT GALLERY
+         FAQ
     ============================= -->
-    <section id="gallery" class="section gallery-section">
-        <h2>Project Gallery</h2>
+    <section id="faq" class="section faq-section">
+        <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
 
-        <div class="gallery-grid">
-            <!-- Replace with your real images -->
-            <img src="images/field1.jpg" alt="Field Work">
-            <img src="images/equipment1.jpg" alt="Equipment">
-            <img src="images/map1.jpg" alt="Geological Map">
-            <img src="images/model1.jpg" alt="3D Model">
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3 data-i18n="faq1Q">How accurate are the studies?</h3>
+                <p data-i18n="faq1A">Our methods combine satellite data, geological interpretation, and field validation.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-i18n="faq2Q">How long does a survey take?</h3>
+                <p data-i18n="faq2A">Most studies are completed within days depending on project size.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-i18n="faq3Q">Do you travel internationally?</h3>
+                <p data-i18n="faq3A">Yes, GeoNex operates across multiple countries.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-i18n="faq4Q">What minerals can be detected?</h3>
+                <p data-i18n="faq4A">Gold, copper, emeralds, rare earth minerals, and more.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-i18n="faq5Q">How do I request a quote?</h3>
+                <p data-i18n="faq5A">Use the contact form below or email us directly.</p>
+            </div>
         </div>
     </section>
 
@@ -156,47 +253,38 @@
          CONTACT SECTION
     ============================= -->
     <section id="contact" class="section contact-section">
-        <h2>Contact Us</h2>
+        <h2 data-i18n="contactTitle">Contact Us</h2>
 
         <div class="contact-wrapper">
 
-            <!-- Contact Form -->
             <form class="contact-form">
-                <label>Name</label>
+                <label data-i18n="contactNameLabel">Name</label>
                 <input type="text" placeholder="Your Name">
 
-                <label>Email</label>
+                <label data-i18n="contactEmailLabel">Email</label>
                 <input type="email" placeholder="Your Email">
 
-                <label>Message</label>
+                <label data-i18n="contactMessageLabel">Message</label>
                 <textarea placeholder="Tell us about your project..."></textarea>
 
-                <button type="submit">Send Message</button>
+                <button type="submit" data-i18n="contactSubmit">Send Message</button>
             </form>
 
-            <!-- Contact Info -->
             <div class="contact-info">
-                <h3>GeoNex Exploration</h3>
+                <h3 data-i18n="contactCompanyName">GeoNex Exploration</h3>
 
-                <p><strong>Email:</strong> nikolasmotta777@gmail.com</p>
-                <p><strong>Phone:</strong> +1 (657) 354‑9924</p>
-                <p><strong>LinkedIn:</strong> linkedin.com/in/nicolas‑motta</p>
+                <p><strong data-i18n="contactEmailTitle">Email:</strong> <a href="mailto:nikolasmotta777@gmail.com">nikolasmotta777@gmail.com</a></p>
+                <p><strong data-i18n="contactPhoneTitle">Phone:</strong> <a href="tel:+16573549924">+1 (657) 354‑9924</a></p>
+                <p><strong data-i18n="contactLinkedInTitle">LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicolas-motta" target="_blank">linkedin.com/in/nicolas‑motta</a></p>
 
-                <!-- Google Maps Embed -->
                 <div class="map-small">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18..."
-                        loading="lazy"
-                        allowfullscreen>
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." loading="lazy"></iframe>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- External JS -->
     <script src="script.js"></script>
-
 </body>
 </html>
