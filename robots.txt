@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikoloro.github.io/GeoNex/sitemap.xml

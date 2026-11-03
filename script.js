@@ -3,18 +3,26 @@
     -------------------------
     Handles:
 
-    1. Smooth scrolling for navigation links.
-    2. Language toggle (English ↔ Spanish).
-    3. Updating all text elements using data-i18n attributes.
-    4. Defensive checks for missing translation keys.
+    1. Language toggle (English <-> Spanish), remembered between visits.
+    2. Updating text, placeholders and aria-labels via data-i18n attributes.
+    3. Mobile navigation menu.
+    4. Rotating hero phrases.
+    5. Contact form (opens the visitor's email app with the message filled in).
+
+    Smooth scrolling is handled in style.css (scroll-behavior).
 */
 
 
 /* ============================================================
-   TRANSLATION DATA — Updated for new HTML structure
+   TRANSLATION DATA
 ============================================================ */
 const translations = {
     en: {
+        /* Accessibility */
+        skipLink: "Skip to content",
+        menuLabel: "Open menu",
+        langToggleLabel: "Switch language",
+
         /* Navigation */
         brandName: "GeoNex",
         navAbout: "About",
@@ -29,6 +37,10 @@ const translations = {
 
         /* Hero */
         heroTitle: "Advanced Geological Intelligence",
+        heroRotate1: "Mineral Exploration",
+        heroRotate2: "Groundwater Detection",
+        heroRotate3: "Geophysical Surveys",
+        heroRotate4: "Remote Sensing",
         heroCta: "Request an Analysis",
 
         /* About */
@@ -38,11 +50,11 @@ const translations = {
         /* Why Choose Us */
         whyTitle: "Why Choose GeoNex",
         why1Title: "Satellite Analysis",
-        why1Desc: "High‑resolution remote sensing for mineral and structural detection.",
+        why1Desc: "High-resolution remote sensing for mineral and structural detection.",
         why2Title: "Geological Interpretation",
         why2Desc: "Professional subsurface mapping and structural modeling.",
         why3Title: "Precision Mapping",
-        why3Desc: "Accurate geological and geophysical mapping for decision‑making.",
+        why3Desc: "Accurate geological and geophysical mapping for decision-making.",
         why4Title: "Fast Results",
         why4Desc: "Efficient workflows delivering rapid geological insights.",
         why5Title: "International Projects",
@@ -53,13 +65,13 @@ const translations = {
         /* Services */
         servicesTitle: "Our Services",
         serviceMineralTitle: "Mineral Exploration",
-        serviceMineralDesc: "High‑precision detection of gold, copper, emeralds, and rare earth minerals.",
+        serviceMineralDesc: "High-precision detection of gold, copper, emeralds, and rare earth minerals.",
         serviceVoidTitle: "Underground Void Detection",
         serviceVoidDesc: "Identify cavities, tunnels, and structural anomalies with advanced scanning.",
         serviceGeoTitle: "Geological Analysis",
         serviceGeoDesc: "Professional geological interpretation, mapping, and risk assessment.",
         serviceRemoteTitle: "Remote Sensing",
-        serviceRemoteDesc: "Satellite‑based terrain, mineral, and structural intelligence.",
+        serviceRemoteDesc: "Satellite-based terrain, mineral, and structural intelligence.",
 
         /* Industries */
         industriesTitle: "Industries We Serve",
@@ -79,9 +91,6 @@ const translations = {
         processStepAnalysis: "Geological Analysis",
         processStepReport: "Report",
         processStepRecommendations: "Recommendations",
-
-        /* Before / After */
-        beforeAfterTitle: "Before & After Interpretation",
 
         /* Gallery */
         galleryTitle: "Project Gallery",
@@ -108,28 +117,65 @@ const translations = {
         contactNameLabel: "Name",
         contactEmailLabel: "Email",
         contactMessageLabel: "Message",
+        placeholderName: "Your name",
+        placeholderEmail: "Your email",
+        placeholderMessage: "Tell us about your project...",
         contactSubmit: "Send Message",
+        contactStatusOpening: "Opening your email app with your message...",
+        contactStatusInvalid: "Please fill in your name, a valid email, and a message.",
+        contactMailSubject: "GeoNex project inquiry",
+        contactMailName: "Name",
+        contactMailEmail: "Email",
         contactCompanyName: "GeoNex Exploration",
         contactEmailTitle: "Email:",
         contactPhoneTitle: "Phone:",
-        contactLinkedInTitle: "LinkedIn:"
+        contactLinkedInTitle: "LinkedIn:",
+
+        /* Footer */
+        footerRights: "All rights reserved.",
+
+        /* Quick contact, controls */
+        quickCall: "Call",
+        quickWhatsApp: "WhatsApp",
+        backToTop: "Back to top",
+        closeLabel: "Close",
+        contactStatusSending: "Sending...",
+        contactStatusSent: "Message sent. We will reply soon.",
+        contactStatusError: "Something went wrong. Please email us directly.",
+
+        /* Image descriptions */
+        altSatellite: "Satellite analysis",
+        altDrone: "Drone geological imaging",
+        altGold: "Gold exploration",
+        altGeoEquip: "Geophysical equipment",
+        altMap: "Geological map",
+        altModel: "3D geological model"
     },
 
     es: {
+        /* Accessibility */
+        skipLink: "Saltar al contenido",
+        menuLabel: "Abrir menú",
+        langToggleLabel: "Cambiar idioma",
+
         /* Navigation */
         brandName: "GeoNex",
-        navAbout: "Sobre Nosotros",
+        navAbout: "Nosotros",
         navWhy: "Por Qué GeoNex",
         navServices: "Servicios",
         navIndustries: "Industrias",
         navProcess: "Proceso",
         navGallery: "Galería",
-        navFaq: "Preguntas Frecuentadas",
+        navFaq: "Preguntas",
         navContact: "Contacto",
         langToggle: "EN / ES",
 
         /* Hero */
         heroTitle: "Inteligencia Geológica Avanzada",
+        heroRotate1: "Exploración de Minerales",
+        heroRotate2: "Detección de Agua Subterránea",
+        heroRotate3: "Estudios Geofísicos",
+        heroRotate4: "Teledetección",
         heroCta: "Solicitar Análisis",
 
         /* About */
@@ -139,7 +185,7 @@ const translations = {
         /* Why Choose Us */
         whyTitle: "Por Qué Elegir GeoNex",
         why1Title: "Análisis Satelital",
-        why1Desc: "Sensores remotos de alta resolución para detección mineral y estructural.",
+        why1Desc: "Teledetección de alta resolución para la detección mineral y estructural.",
         why2Title: "Interpretación Geológica",
         why2Desc: "Mapeo profesional del subsuelo y modelado estructural.",
         why3Title: "Mapeo de Precisión",
@@ -154,12 +200,12 @@ const translations = {
         /* Services */
         servicesTitle: "Nuestros Servicios",
         serviceMineralTitle: "Exploración de Minerales",
-        serviceMineralDesc: "Detección de alta precisión de oro, cobre, esmeraldas y minerales raros.",
+        serviceMineralDesc: "Detección de alta precisión de oro, cobre, esmeraldas y tierras raras.",
         serviceVoidTitle: "Detección de Vacíos Subterráneos",
         serviceVoidDesc: "Identifica cavidades, túneles y anomalías estructurales con escaneo avanzado.",
         serviceGeoTitle: "Análisis Geológico",
         serviceGeoDesc: "Interpretación geológica profesional, mapeo y evaluación de riesgos.",
-        serviceRemoteTitle: "Sensores Remotos",
+        serviceRemoteTitle: "Teledetección",
         serviceRemoteDesc: "Inteligencia satelital del terreno, minerales y estructuras.",
 
         /* Industries */
@@ -181,9 +227,6 @@ const translations = {
         processStepReport: "Informe",
         processStepRecommendations: "Recomendaciones",
 
-        /* Before / After */
-        beforeAfterTitle: "Interpretación Antes y Después",
-
         /* Gallery */
         galleryTitle: "Galería de Proyectos",
         galleryGold: "Exploración de Oro",
@@ -192,28 +235,56 @@ const translations = {
         galleryModel: "Modelo Geológico 3D",
 
         /* FAQ */
-        faqTitle: "Preguntas Frecuentadas",
+        faqTitle: "Preguntas Frecuentes",
         faq1Q: "¿Qué tan precisos son los estudios?",
         faq1A: "Nuestros métodos combinan datos satelitales, interpretación geológica y validación en campo.",
         faq2Q: "¿Cuánto tiempo tarda un estudio?",
-        faq2A: "La mayoría de los estudios se completan en pocos días dependiendo del tamaño del proyecto.",
+        faq2A: "La mayoría de los estudios se completan en pocos días, dependiendo del tamaño del proyecto.",
         faq3Q: "¿Viajan internacionalmente?",
         faq3A: "Sí, GeoNex opera en múltiples países.",
         faq4Q: "¿Qué minerales pueden detectarse?",
-        faq4A: "Oro, cobre, esmeraldas, minerales raros y más.",
+        faq4A: "Oro, cobre, esmeraldas, tierras raras y más.",
         faq5Q: "¿Cómo solicito una cotización?",
         faq5A: "Use el formulario de contacto o envíenos un correo directamente.",
 
         /* Contact */
-        contactTitle: "Contáctanos",
+        contactTitle: "Contáctenos",
         contactNameLabel: "Nombre",
         contactEmailLabel: "Correo",
         contactMessageLabel: "Mensaje",
+        placeholderName: "Su nombre",
+        placeholderEmail: "Su correo",
+        placeholderMessage: "Cuéntenos sobre su proyecto...",
         contactSubmit: "Enviar Mensaje",
+        contactStatusOpening: "Abriendo su aplicación de correo con su mensaje...",
+        contactStatusInvalid: "Ingrese su nombre, un correo válido y un mensaje.",
+        contactMailSubject: "Consulta de proyecto GeoNex",
+        contactMailName: "Nombre",
+        contactMailEmail: "Correo",
         contactCompanyName: "GeoNex Exploración",
         contactEmailTitle: "Correo:",
         contactPhoneTitle: "Teléfono:",
-        contactLinkedInTitle: "LinkedIn:"
+        contactLinkedInTitle: "LinkedIn:",
+
+        /* Footer */
+        footerRights: "Todos los derechos reservados.",
+
+        /* Quick contact, controls */
+        quickCall: "Llamar",
+        quickWhatsApp: "WhatsApp",
+        backToTop: "Volver arriba",
+        closeLabel: "Cerrar",
+        contactStatusSending: "Enviando...",
+        contactStatusSent: "Mensaje enviado. Le responderemos pronto.",
+        contactStatusError: "Algo salió mal. Por favor escríbanos directamente por correo.",
+
+        /* Image descriptions */
+        altSatellite: "Análisis satelital",
+        altDrone: "Imágenes geológicas con dron",
+        altGold: "Exploración de oro",
+        altGeoEquip: "Equipo geofísico",
+        altMap: "Mapa geológico",
+        altModel: "Modelo geológico 3D"
     }
 };
 
@@ -222,14 +293,38 @@ const translations = {
    LANGUAGE SYSTEM
 ============================================================ */
 
+const STORAGE_KEY = "geonex-lang";
 let currentLanguage = "en";
 
-function updateLanguage(lang) {
-    const elements = document.querySelectorAll("[data-i18n]");
+function getSavedLanguage() {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        return translations[saved] ? saved : "en";
+    } catch (e) {
+        return "en"; // storage blocked (private mode, etc.)
+    }
+}
 
-    elements.forEach(el => {
+function saveLanguage(lang) {
+    try {
+        localStorage.setItem(STORAGE_KEY, lang);
+    } catch (e) {
+        /* ignore */
+    }
+}
+
+function t(key) {
+    return translations?.[currentLanguage]?.[key] ?? key;
+}
+
+function updateLanguage(lang) {
+    if (!translations[lang]) return;
+    currentLanguage = lang;
+
+    // Text content
+    document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
-        const translation = translations?.[lang]?.[key];
+        const translation = translations[lang][key];
 
         if (translation) {
             el.textContent = translation;
@@ -238,7 +333,32 @@ function updateLanguage(lang) {
         }
     });
 
-    currentLanguage = lang;
+    // Placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const translation = translations[lang][el.getAttribute("data-i18n-placeholder")];
+        if (translation) el.setAttribute("placeholder", translation);
+    });
+
+    // Image descriptions
+    document.querySelectorAll("[data-i18n-alt]").forEach(el => {
+        const translation = translations[lang][el.getAttribute("data-i18n-alt")];
+        if (translation) el.setAttribute("alt", translation);
+    });
+
+    // aria-labels
+    document.querySelectorAll("[data-i18n-aria-label]").forEach(el => {
+        const translation = translations[lang][el.getAttribute("data-i18n-aria-label")];
+        if (translation) el.setAttribute("aria-label", translation);
+    });
+
+    document.documentElement.lang = lang;
+
+    // Clear any old form message so it doesn't stay in the wrong language
+    const status = document.getElementById("form-status");
+    if (status) {
+        status.textContent = "";
+        status.classList.remove("error");
+    }
 }
 
 function setupLanguageToggle() {
@@ -248,31 +368,222 @@ function setupLanguageToggle() {
     toggle.addEventListener("click", () => {
         const newLang = currentLanguage === "en" ? "es" : "en";
         updateLanguage(newLang);
+        saveLanguage(newLang);
     });
 }
 
 
 /* ============================================================
-   SMOOTH SCROLLING
+   MOBILE MENU
 ============================================================ */
 
-function enableSmoothScroll() {
-    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+function setupMobileMenu() {
+    const button = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+    if (!button || !nav) return;
 
-    links.forEach(link => {
-        link.addEventListener("click", event => {
-            event.preventDefault();
+    function setOpen(open) {
+        nav.classList.toggle("open", open);
+        document.body.classList.toggle("menu-open", open);
+        button.setAttribute("aria-expanded", String(open));
+    }
 
-            const targetId = link.getAttribute("href").substring(1);
-            const target = document.getElementById(targetId);
+    button.addEventListener("click", () => {
+        setOpen(button.getAttribute("aria-expanded") !== "true");
+    });
 
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+    // Close after choosing a link
+    nav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => setOpen(false));
+    });
+
+    // Close with Escape
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") setOpen(false);
+    });
+
+    // Close when tapping anywhere outside the menu
+    document.addEventListener("click", event => {
+        if (!nav.contains(event.target) && !button.contains(event.target)) setOpen(false);
+    });
+}
+
+
+/* ============================================================
+   ROTATING HERO PHRASES
+============================================================ */
+
+function setupHeroRotation() {
+    const container = document.querySelector(".hero-rotate");
+    if (!container) return;
+
+    const items = container.querySelectorAll(".rotate-item");
+    if (items.length < 2) return;
+
+    // Leave all phrases visible for people who prefer reduced motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    container.classList.add("is-rotating");
+
+    let index = 0;
+    items[index].classList.add("active");
+
+    setInterval(() => {
+        items[index].classList.remove("active");
+        index = (index + 1) % items.length;
+        items[index].classList.add("active");
+    }, 2800);
+}
+
+
+/* ============================================================
+   CONTACT FORM
+   There is no server behind this static site, so the form opens
+   the visitor's email app with the message pre-filled. To receive
+   messages directly instead, point the form at a service such as
+   Formspree or Netlify Forms.
+============================================================ */
+
+function setupContactForm() {
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    if (!form || !status) return;
+
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const name = form.elements["name"].value.trim();
+        const email = form.elements["email"].value.trim();
+        const message = form.elements["message"].value.trim();
+
+        if (!name || !message || !form.elements["email"].checkValidity() || !email) {
+            status.textContent = t("contactStatusInvalid");
+            status.classList.add("error");
+            return;
+        }
+
+        // If data-endpoint is set on the form (e.g. a Formspree URL), send it there.
+        const endpoint = form.dataset.endpoint;
+        if (endpoint) {
+            status.textContent = t("contactStatusSending");
+            status.classList.remove("error");
+
+            fetch(endpoint, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { Accept: "application/json" }
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error("Request failed");
+                    form.reset();
+                    status.textContent = t("contactStatusSent");
+                })
+                .catch(() => {
+                    status.textContent = t("contactStatusError");
+                    status.classList.add("error");
                 });
+            return;
+        }
+
+        // Otherwise open the visitor's email app with the message filled in.
+        const subject = t("contactMailSubject");
+        const body = `${t("contactMailName")}: ${name}\n${t("contactMailEmail")}: ${email}\n\n${message}`;
+        const recipient = form.dataset.recipient;
+
+        status.textContent = t("contactStatusOpening");
+        status.classList.remove("error");
+
+        window.location.href =
+            `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+}
+
+
+/* ============================================================
+   HIGHLIGHT CURRENT SECTION IN NAV
+============================================================ */
+
+function setupActiveNav() {
+    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+    if (!links.length || !("IntersectionObserver" in window)) return;
+
+    const byId = {};
+    links.forEach(link => { byId[link.getAttribute("href").slice(1)] = link; });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            links.forEach(l => { l.classList.remove("active"); l.removeAttribute("aria-current"); });
+            const link = byId[entry.target.id];
+            if (link) {
+                link.classList.add("active");
+                link.setAttribute("aria-current", "true");
             }
         });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+
+    Object.keys(byId).forEach(id => {
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
+    });
+}
+
+
+/* ============================================================
+   BACK-TO-TOP BUTTON
+============================================================ */
+
+function setupBackToTop() {
+    const button = document.getElementById("back-to-top");
+    if (!button) return;
+
+    window.addEventListener("scroll", () => {
+        button.classList.toggle("visible", window.scrollY > 700);
+    }, { passive: true });
+
+    button.addEventListener("click", () => {
+        window.scrollTo({ top: 0 });
+    });
+}
+
+
+/* ============================================================
+   GALLERY LIGHTBOX
+============================================================ */
+
+function setupLightbox() {
+    const box = document.getElementById("lightbox");
+    if (!box || typeof box.showModal !== "function") return;
+
+    const img = box.querySelector("img");
+    const caption = box.querySelector(".lightbox-caption");
+    const closeButton = box.querySelector(".lightbox-close");
+
+    document.querySelectorAll(".gallery-item").forEach(item => {
+        item.tabIndex = 0;
+        item.setAttribute("role", "button");
+
+        const open = () => {
+            const thumb = item.querySelector("img");
+            // Ask for a larger version when the image URL has a width setting
+            img.src = thumb.src.replace(/([?&]w=)\d+/, (m, prefix) => prefix + "1400");
+            img.alt = thumb.alt;
+            caption.textContent = item.querySelector(".overlay").textContent;
+            box.showModal();
+        };
+
+        item.addEventListener("click", open);
+        item.addEventListener("keydown", event => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                open();
+            }
+        });
+    });
+
+    closeButton.addEventListener("click", () => box.close());
+    box.addEventListener("click", event => {
+        if (event.target === box) box.close();
     });
 }
 
@@ -282,7 +593,15 @@ function enableSmoothScroll() {
 ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-    updateLanguage("en");
-    enableSmoothScroll();
+    updateLanguage(getSavedLanguage());
     setupLanguageToggle();
+    setupMobileMenu();
+    setupHeroRotation();
+    setupContactForm();
+    setupActiveNav();
+    setupBackToTop();
+    setupLightbox();
+
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 });
