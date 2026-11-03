@@ -194,7 +194,7 @@ img {
     position: absolute;
     inset: 0;
     background: url("images/satellite.jpg") center/cover no-repeat;
-    animation: heroZoom 24s ease-out forwards; /* plays once, saves battery */
+    animation: heroZoom 24s ease-out forwards;
     z-index: 0;
 }
 
@@ -245,14 +245,12 @@ img {
     color: var(--text-muted);
 }
 
-/* Without JavaScript all four phrases show as a list */
 .hero-rotate .rotate-item {
     display: inline-block;
     margin: 0 6px;
     opacity: 0.85;
 }
 
-/* With JavaScript the phrases take turns in the same spot */
 .hero-rotate.is-rotating {
     display: grid;
     justify-items: center;
@@ -515,7 +513,6 @@ img {
     opacity: 1;
 }
 
-/* Touch screens have no hover, so always show the captions there */
 @media (hover: none) {
     .gallery-item .overlay {
         opacity: 1;
@@ -580,7 +577,7 @@ img {
     padding: 12px;
     border-radius: 8px;
     color: #fff;
-    font-size: 1rem; /* 16px+ stops iOS from zooming the page on focus */
+    font-size: 1rem;
     font-family: inherit;
 }
 
@@ -681,7 +678,6 @@ img {
    RESPONSIVE
 ============================================================ */
 
-/* Eight nav links no longer fit: switch to the hamburger menu */
 @media (max-width: 1150px) {
     .logo {
         margin-right: auto;
@@ -763,7 +759,6 @@ img {
     }
 }
 
-/* Respect people who turn off motion in their system settings */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -784,12 +779,7 @@ img {
 }
 
 
-/* ============================================================
-   UPGRADES: tap targets, safe areas, accordion, timeline,
-   quick-contact bar, back-to-top, lightbox, active nav
-============================================================ */
 
-/* Bigger tap targets */
 .lang-toggle {
     min-height: 44px;
     padding: 8px 18px;
@@ -800,7 +790,6 @@ img {
     height: 44px;
 }
 
-/* Honeypot field for spam bots (hidden from people) */
 .hp {
     position: absolute;
     left: -9999px;
@@ -809,7 +798,6 @@ img {
     opacity: 0;
 }
 
-/* Current section highlighted in the nav */
 .nav-links a.active {
     color: var(--accent-gold);
 }
@@ -818,7 +806,6 @@ img {
     width: 100%;
 }
 
-/* FAQ accordion */
 .faq-item {
     padding: 0;
 }
@@ -863,7 +850,6 @@ img {
     border-color: var(--accent-gold);
 }
 
-/* Gallery items open a lightbox */
 .gallery-item {
     cursor: zoom-in;
 }
@@ -949,12 +935,10 @@ img {
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Quick-contact bar: phones only */
 .quick-contact {
     display: none;
 }
 
-/* Safe areas (notches, rounded corners, landscape phones) */
 .top-nav {
     padding-left: max(40px, env(safe-area-inset-left));
     padding-right: max(40px, env(safe-area-inset-right));
@@ -970,7 +954,6 @@ img {
         padding-right: max(20px, env(safe-area-inset-right));
     }
 
-    /* Vertical timeline with a connecting line */
     .timeline {
         gap: 0;
         padding-left: 28px;

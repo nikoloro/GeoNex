@@ -1,15 +1,6 @@
 /*
     GeoNex Website JavaScript
     -------------------------
-    Handles:
-
-    1. Language toggle (English <-> Spanish), remembered between visits.
-    2. Updating text, placeholders and aria-labels via data-i18n attributes.
-    3. Mobile navigation menu.
-    4. Rotating hero phrases.
-    5. Contact form (opens the visitor's email app with the message filled in).
-
-    Smooth scrolling is handled in style.css (scroll-behavior).
 */
 
 
@@ -18,12 +9,10 @@
 ============================================================ */
 const translations = {
     en: {
-        /* Accessibility */
         skipLink: "Skip to content",
         menuLabel: "Open menu",
         langToggleLabel: "Switch language",
 
-        /* Navigation */
         brandName: "GeoNex",
         navAbout: "About",
         navWhy: "Why Us",
@@ -35,7 +24,6 @@ const translations = {
         navContact: "Contact",
         langToggle: "EN / ES",
 
-        /* Hero */
         heroTitle: "Advanced Geological Intelligence",
         heroRotate1: "Mineral Exploration",
         heroRotate2: "Groundwater Detection",
@@ -43,11 +31,9 @@ const translations = {
         heroRotate4: "Remote Sensing",
         heroCta: "Request an Analysis",
 
-        /* About */
         aboutTitle: "About GeoNex",
         aboutText: "GeoNex combines satellite analysis, geophysical methods, geological interpretation, and modern exploration techniques to help clients identify mineral resources, groundwater, underground cavities, and geological structures with precision.",
 
-        /* Why Choose Us */
         whyTitle: "Why Choose GeoNex",
         why1Title: "Satellite Analysis",
         why1Desc: "High-resolution remote sensing for mineral and structural detection.",
@@ -62,7 +48,6 @@ const translations = {
         why6Title: "Professional Reports",
         why6Desc: "Clear, actionable geological documentation for clients.",
 
-        /* Services */
         servicesTitle: "Our Services",
         serviceMineralTitle: "Mineral Exploration",
         serviceMineralDesc: "High-precision detection of gold, copper, emeralds, and rare earth minerals.",
@@ -73,7 +58,6 @@ const translations = {
         serviceRemoteTitle: "Remote Sensing",
         serviceRemoteDesc: "Satellite-based terrain, mineral, and structural intelligence.",
 
-        /* Industries */
         industriesTitle: "Industries We Serve",
         industryMining: "Mining",
         industryConstruction: "Construction",
@@ -84,7 +68,6 @@ const translations = {
         industryOilGas: "Oil & Gas",
         industryUtilities: "Utilities",
 
-        /* Process */
         processTitle: "Our Process",
         processStepRequest: "Consultation",
         processStepSatellite: "Data Collection",
@@ -92,14 +75,12 @@ const translations = {
         processStepReport: "Report",
         processStepRecommendations: "Recommendations",
 
-        /* Gallery */
         galleryTitle: "Project Gallery",
         galleryGold: "Gold Exploration",
         galleryGeoEquip: "Geophysical Survey",
         galleryMap: "Geological Mapping",
         galleryModel: "3D Geological Model",
 
-        /* FAQ */
         faqTitle: "Frequently Asked Questions",
         faq1Q: "How accurate are the studies?",
         faq1A: "Our methods combine satellite data, geological interpretation, and field validation.",
@@ -112,7 +93,6 @@ const translations = {
         faq5Q: "How do I request a quote?",
         faq5A: "Use the contact form below or email us directly.",
 
-        /* Contact */
         contactTitle: "Contact Us",
         contactNameLabel: "Name",
         contactEmailLabel: "Email",
@@ -131,10 +111,8 @@ const translations = {
         contactPhoneTitle: "Phone:",
         contactLinkedInTitle: "LinkedIn:",
 
-        /* Footer */
         footerRights: "All rights reserved.",
 
-        /* Quick contact, controls */
         quickCall: "Call",
         quickWhatsApp: "WhatsApp",
         backToTop: "Back to top",
@@ -143,7 +121,6 @@ const translations = {
         contactStatusSent: "Message sent. We will reply soon.",
         contactStatusError: "Something went wrong. Please email us directly.",
 
-        /* Image descriptions */
         altSatellite: "Satellite analysis",
         altDrone: "Drone geological imaging",
         altGold: "Gold exploration",
@@ -153,12 +130,10 @@ const translations = {
     },
 
     es: {
-        /* Accessibility */
         skipLink: "Saltar al contenido",
         menuLabel: "Abrir menú",
         langToggleLabel: "Cambiar idioma",
 
-        /* Navigation */
         brandName: "GeoNex",
         navAbout: "Nosotros",
         navWhy: "Por Qué GeoNex",
@@ -170,7 +145,6 @@ const translations = {
         navContact: "Contacto",
         langToggle: "EN / ES",
 
-        /* Hero */
         heroTitle: "Inteligencia Geológica Avanzada",
         heroRotate1: "Exploración de Minerales",
         heroRotate2: "Detección de Agua Subterránea",
@@ -178,11 +152,9 @@ const translations = {
         heroRotate4: "Teledetección",
         heroCta: "Solicitar Análisis",
 
-        /* About */
         aboutTitle: "Sobre GeoNex",
         aboutText: "GeoNex combina análisis satelital, métodos geofísicos, interpretación geológica y técnicas modernas de exploración para ayudar a identificar recursos minerales, agua subterránea, cavidades y estructuras geológicas con precisión.",
 
-        /* Why Choose Us */
         whyTitle: "Por Qué Elegir GeoNex",
         why1Title: "Análisis Satelital",
         why1Desc: "Teledetección de alta resolución para la detección mineral y estructural.",
@@ -197,7 +169,6 @@ const translations = {
         why6Title: "Informes Profesionales",
         why6Desc: "Documentación geológica clara y accionable para clientes.",
 
-        /* Services */
         servicesTitle: "Nuestros Servicios",
         serviceMineralTitle: "Exploración de Minerales",
         serviceMineralDesc: "Detección de alta precisión de oro, cobre, esmeraldas y tierras raras.",
@@ -208,7 +179,6 @@ const translations = {
         serviceRemoteTitle: "Teledetección",
         serviceRemoteDesc: "Inteligencia satelital del terreno, minerales y estructuras.",
 
-        /* Industries */
         industriesTitle: "Industrias que Atendemos",
         industryMining: "Minería",
         industryConstruction: "Construcción",
@@ -219,7 +189,6 @@ const translations = {
         industryOilGas: "Petróleo y Gas",
         industryUtilities: "Servicios Públicos",
 
-        /* Process */
         processTitle: "Nuestro Proceso",
         processStepRequest: "Consulta",
         processStepSatellite: "Recolección de Datos",
@@ -227,14 +196,12 @@ const translations = {
         processStepReport: "Informe",
         processStepRecommendations: "Recomendaciones",
 
-        /* Gallery */
         galleryTitle: "Galería de Proyectos",
         galleryGold: "Exploración de Oro",
         galleryGeoEquip: "Estudio Geofísico",
         galleryMap: "Mapeo Geológico",
         galleryModel: "Modelo Geológico 3D",
 
-        /* FAQ */
         faqTitle: "Preguntas Frecuentes",
         faq1Q: "¿Qué tan precisos son los estudios?",
         faq1A: "Nuestros métodos combinan datos satelitales, interpretación geológica y validación en campo.",
@@ -266,10 +233,8 @@ const translations = {
         contactPhoneTitle: "Teléfono:",
         contactLinkedInTitle: "LinkedIn:",
 
-        /* Footer */
         footerRights: "Todos los derechos reservados.",
 
-        /* Quick contact, controls */
         quickCall: "Llamar",
         quickWhatsApp: "WhatsApp",
         backToTop: "Volver arriba",
@@ -278,7 +243,6 @@ const translations = {
         contactStatusSent: "Mensaje enviado. Le responderemos pronto.",
         contactStatusError: "Algo salió mal. Por favor escríbanos directamente por correo.",
 
-        /* Image descriptions */
         altSatellite: "Análisis satelital",
         altDrone: "Imágenes geológicas con dron",
         altGold: "Exploración de oro",
@@ -301,7 +265,7 @@ function getSavedLanguage() {
         const saved = localStorage.getItem(STORAGE_KEY);
         return translations[saved] ? saved : "en";
     } catch (e) {
-        return "en"; // storage blocked (private mode, etc.)
+        return "en";
     }
 }
 
@@ -321,7 +285,6 @@ function updateLanguage(lang) {
     if (!translations[lang]) return;
     currentLanguage = lang;
 
-    // Text content
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         const translation = translations[lang][key];
@@ -333,19 +296,16 @@ function updateLanguage(lang) {
         }
     });
 
-    // Placeholders
     document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
         const translation = translations[lang][el.getAttribute("data-i18n-placeholder")];
         if (translation) el.setAttribute("placeholder", translation);
     });
 
-    // Image descriptions
     document.querySelectorAll("[data-i18n-alt]").forEach(el => {
         const translation = translations[lang][el.getAttribute("data-i18n-alt")];
         if (translation) el.setAttribute("alt", translation);
     });
 
-    // aria-labels
     document.querySelectorAll("[data-i18n-aria-label]").forEach(el => {
         const translation = translations[lang][el.getAttribute("data-i18n-aria-label")];
         if (translation) el.setAttribute("aria-label", translation);
@@ -353,7 +313,6 @@ function updateLanguage(lang) {
 
     document.documentElement.lang = lang;
 
-    // Clear any old form message so it doesn't stay in the wrong language
     const status = document.getElementById("form-status");
     if (status) {
         status.textContent = "";
@@ -392,17 +351,14 @@ function setupMobileMenu() {
         setOpen(button.getAttribute("aria-expanded") !== "true");
     });
 
-    // Close after choosing a link
     nav.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => setOpen(false));
     });
 
-    // Close with Escape
     document.addEventListener("keydown", event => {
         if (event.key === "Escape") setOpen(false);
     });
 
-    // Close when tapping anywhere outside the menu
     document.addEventListener("click", event => {
         if (!nav.contains(event.target) && !button.contains(event.target)) setOpen(false);
     });
@@ -420,7 +376,6 @@ function setupHeroRotation() {
     const items = container.querySelectorAll(".rotate-item");
     if (items.length < 2) return;
 
-    // Leave all phrases visible for people who prefer reduced motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     container.classList.add("is-rotating");
@@ -438,10 +393,6 @@ function setupHeroRotation() {
 
 /* ============================================================
    CONTACT FORM
-   There is no server behind this static site, so the form opens
-   the visitor's email app with the message pre-filled. To receive
-   messages directly instead, point the form at a service such as
-   Formspree or Netlify Forms.
 ============================================================ */
 
 function setupContactForm() {
@@ -462,7 +413,6 @@ function setupContactForm() {
             return;
         }
 
-        // If data-endpoint is set on the form (e.g. a Formspree URL), send it there.
         const endpoint = form.dataset.endpoint;
         if (endpoint) {
             status.textContent = t("contactStatusSending");
@@ -485,7 +435,6 @@ function setupContactForm() {
             return;
         }
 
-        // Otherwise open the visitor's email app with the message filled in.
         const subject = t("contactMailSubject");
         const body = `${t("contactMailName")}: ${name}\n${t("contactMailEmail")}: ${email}\n\n${message}`;
         const recipient = form.dataset.recipient;
